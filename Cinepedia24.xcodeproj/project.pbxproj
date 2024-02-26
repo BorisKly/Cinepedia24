@@ -35,7 +35,6 @@
 		E46F5CD92B8B3F1300AA5F40 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CD82B8B3F1300AA5F40 /* MovieService.swift */; };
 		E46F5CDB2B8B404800AA5F40 /* NetworkApiMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CDA2B8B404800AA5F40 /* NetworkApiMethods.swift */; };
 		E46F5CDF2B8B468000AA5F40 /* Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CDE2B8B468000AA5F40 /* Access.swift */; };
-		E46F5CE22B8B4ADD00AA5F40 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46F5CE12B8B4ADD00AA5F40 /* Keys.plist */; };
 		E46F5CED2B8B5C7B00AA5F40 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E46F5CEC2B8B5C7B00AA5F40 /* SDWebImage */; };
 		E46F5CEF2B8B5C7B00AA5F40 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E46F5CEE2B8B5C7B00AA5F40 /* SDWebImageMapKit */; };
 		E46F5CF12B8B5CFB00AA5F40 /* MovieListTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CF02B8B5CFB00AA5F40 /* MovieListTableViewCellPresenter.swift */; };
@@ -81,7 +80,6 @@
 		E46F5CD82B8B3F1300AA5F40 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		E46F5CDA2B8B404800AA5F40 /* NetworkApiMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiMethods.swift; sourceTree = "<group>"; };
 		E46F5CDE2B8B468000AA5F40 /* Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Access.swift; sourceTree = "<group>"; };
-		E46F5CE12B8B4ADD00AA5F40 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		E46F5CF02B8B5CFB00AA5F40 /* MovieListTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCellPresenter.swift; sourceTree = "<group>"; };
 		E46F5CF22B8B5DEC00AA5F40 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		E46F5CF52B8B6F7400AA5F40 /* MovieListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListTableViewCell.xib; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 				E46F5CD82B8B3F1300AA5F40 /* MovieService.swift */,
 				E46F5CDA2B8B404800AA5F40 /* NetworkApiMethods.swift */,
 				E46F5CDE2B8B468000AA5F40 /* Access.swift */,
-				E46F5CE12B8B4ADD00AA5F40 /* Keys.plist */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -435,7 +432,6 @@
 				E46F5C7E2B88B97600AA5F40 /* Assets.xcassets in Resources */,
 				E46F5CB52B8A6A2B00AA5F40 /* ListViewController.xib in Resources */,
 				E46F5CA92B8A685E00AA5F40 /* StartViewController.xib in Resources */,
-				E46F5CE22B8B4ADD00AA5F40 /* Keys.plist in Resources */,
 				E46F5D042B8C8FD900AA5F40 /* MovieBannerCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
