@@ -319,11 +319,11 @@
 		E46F5D0F2B8D046400AA5F40 /* MovieDetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				E46F5D142B8D04A700AA5F40 /* Presenter */,
-				E46F5D132B8D049D00AA5F40 /* Entity */,
 				E46F5D122B8D049200AA5F40 /* Router */,
-				E46F5D112B8D048800AA5F40 /* Interactor */,
 				E46F5D102B8D048200AA5F40 /* View */,
+				E46F5D142B8D04A700AA5F40 /* Presenter */,
+				E46F5D112B8D048800AA5F40 /* Interactor */,
+				E46F5D132B8D049D00AA5F40 /* Entity */,
 			);
 			path = MovieDetailModule;
 			sourceTree = "<group>";
