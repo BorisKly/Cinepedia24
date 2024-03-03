@@ -23,14 +23,14 @@ final class MovieDetailRouter {
     weak var viewController: MovieDetailViewController?
     
     static func createModule() -> MovieDetailViewController {
-        let view = MovieDetailViewController()
+        let movieDetailVC = MovieDetailViewController()
         let interactor = MovieDetailInteractor()
         let router = MovieDetailRouter()
-        let presenter = MovieDetailPresenter(view: view, router: router, interactor: interactor)
-        view.presenter = presenter
-        interactor.output = presenter
-        router.viewController = view
-        return view
+        let presenter = MovieDetailPresenter(view: movieDetailVC, router: router, interactor: interactor)
+        movieDetailVC.presenter = presenter
+        interactor.delegate = presenter  
+        router.viewController = movieDetailVC
+        return movieDetailVC
     }
     
 }
@@ -38,17 +38,17 @@ final class MovieDetailRouter {
 extension MovieDetailRouter: MovieDetailRouterProtocol {
     
     func navigate(_ route: MovieDetailRoutes) {
-        switch route {
-            
-        case .detail(let movieId):
-            let detailVC = MovieDetailRouter.createModule()
-            detailVC.movieId = movieId
-            viewController?.navigationController?.pushViewController(detailVC, animated: true)
-        
-        case .openURL(let imdbId):
-            if let url = URL(string: "https://www.imdb.com/title/" + imdbId) {
-                UIApplication.shared.open(url)
-            }
-        }
+//        switch route {
+//            
+//        case .detail(let movieId):
+//            let detailVC = MovieDetailRouter.createModule()
+//            detailVC.movieId = movieId
+//            viewController?.navigationController?.pushViewController(detailVC, animated: true)
+//        
+//        case .openURL(let imdbId):
+//            if let url = URL(string: "https://www.imdb.com/title/" + imdbId) {
+//                UIApplication.shared.open(url)
+//            }
+//        }
     }
 }

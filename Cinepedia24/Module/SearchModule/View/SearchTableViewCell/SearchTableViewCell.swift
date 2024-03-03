@@ -7,17 +7,30 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+protocol SearchTableViewCellProtocol: AnyObject {
+    func setTitleLabel(_ text: String)
+    func setAccessibilityIdentifiers()
 }
+
+final class SearchTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var movieTitleLabel: UILabel!
+  
+  
+    
+    
+    var cellPresenter: SearchTableViewCellPresenterProtocol! {
+        didSet {            cellPresenter.load()
+        }
+    }
+}
+
+extension SearchTableViewCell: SearchTableViewCellProtocol {
+    
+    func setTitleLabel(_ text: String) {
+        movieTitleLabel.text = text
+    }
+
+}
+
+

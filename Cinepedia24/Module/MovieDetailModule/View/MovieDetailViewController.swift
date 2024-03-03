@@ -20,24 +20,26 @@ protocol MovieDetailViewControllerProtocol: AnyObject {
     func setVoteScore(_ text: String)
     func setReleaseDate(_ text: String)
     func setFavoritesButton(_ text: String, isAdded: Bool)
-    func setImdbAvaibleView()
+   // func setImdbAvaibleView()
     func getMovieId() -> Int?
 }
 
 class MovieDetailViewController: UIViewController {
     
-    @IBOutlet private weak var moviePosterImage: UIImageView!
-    @IBOutlet private weak var movieTitleLabel: UILabel!
-    @IBOutlet private weak var movieDescriptionTextView: UITextView!
-    @IBOutlet private weak var voteScoreLabel: UILabel!
-    @IBOutlet private weak var releaseDateLabel: UILabel!
-    @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet private weak var imdbAvaibleView: UIView! {
-        didSet {
-            imdbAvaibleView.isHidden = true
-        }
-    }
-    @IBOutlet private weak var addFavoritesButton: UIButton! {
+    @IBOutlet weak var moviePosterImage: UIImageView!
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var movieDescriptionTextView: UITextView!
+    @IBOutlet weak var voteScoreLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+//    @IBOutlet  weak var imdbAvaibleView: UIView! {
+//        didSet {
+//            imdbAvaibleView.isHidden = true
+//        }
+//    }
+    @IBOutlet weak var addFavoritesButton: UIButton!{
         didSet {
             addFavoritesButton.layer.cornerRadius = 8
             addFavoritesButton.layer.borderWidth = 1
@@ -46,28 +48,28 @@ class MovieDetailViewController: UIViewController {
             addFavoritesButton.tintColor = .black
         }
     }
-    
     var movieId: Int?
     var presenter: MovieDetailPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
+        setUpView()
         presenter.viewDidLoad()
     }
     
-    @IBAction func didTapImdb(_ sender: Any) {
-        presenter.goToImdbPage()
-    }
+//    @IBAction func didTapImdb(_ sender: Any) {
+//        presenter.goToImdbPage()
+//    }
     
-    @IBAction func didTapAddFavorites(_ sender: Any) {
-        presenter.addFavoritesButtonTapped(movieID: self.movieId ?? 0)
-    }
+//    @IBAction func didTapAddFavorites(_ sender: Any) {
+//        presenter.addFavoritesButtonTapped(movieID: self.movieId ?? 0)
+//    }
     
 }
 
-// MARK: - MovieDetailViewControllerProtocol
 extension MovieDetailViewController: MovieDetailViewControllerProtocol, LoadingShowable {
-    
+  
     func setMoviePoster(_ imageUrl: URL) {
         moviePosterImage.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder_movie_poster"))
     }
@@ -94,9 +96,9 @@ extension MovieDetailViewController: MovieDetailViewControllerProtocol, LoadingS
         addFavoritesButton.tintColor = isAdded ? .white : .black
     }
     
-    func setImdbAvaibleView() {
-        imdbAvaibleView.isHidden = false
-    }
+//    func setImdbAvaibleView() {
+//        imdbAvaibleView.isHidden = false
+//    }
     
     func reloadData() {
         self.presenter.loadInputViews()
@@ -111,10 +113,14 @@ extension MovieDetailViewController: MovieDetailViewControllerProtocol, LoadingS
         hideLoading()
     }
     
+    func getMovieId() -> Int? {
+        return movieId
+    }
+   
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(cellType: SimilarMovieCell.self)
+        collectionView.register(cellType: SimilarMovieCollectionViewCell.self)
         
         collectionView.isPagingEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -125,41 +131,7 @@ extension MovieDetailViewController: MovieDetailViewControllerProtocol, LoadingS
         setAccessibilityIdentifiers()
         self.navigationController?.navigationBar.tintColor = .white
     }
-    
-    func getMovieId() -> Int? {
-        return movieId
-    }
 }
 
-// MARK: - CollectionView (Banner)
-extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        presenter.numberOfItemsInSection()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(with: SimilarMovieCell.self, for: indexPath)
-        if let similarMovie = presenter.similarMovie(indexPath.row) {
-            cell.cellPresenter = SimilarMovieCellPresenter(view: cell, movie: similarMovie)
-        }
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.didSelectItemAt(index: indexPath.row)
-    }
-}
 
-extension MovieDetailViewController {
-    func setAccessibilityIdentifiers() {
-        moviePosterImage.accessibilityIdentifier = "moviePosterImage"
-        movieTitleLabel.accessibilityIdentifier = "movieTitleLabel"
-        movieDescriptionTextView.accessibilityIdentifier = "movieDescriptionTextView"
-        voteScoreLabel.accessibilityIdentifier = "voteScoreLabel"
-        releaseDateLabel.accessibilityIdentifier = "releaseDateLabel"
-        collectionView.accessibilityIdentifier = "detailCollectionView"
-        imdbAvaibleView.accessibilityIdentifier = "imdbAvaibleView"
-        addFavoritesButton.accessibilityIdentifier = "addFavoritesButton"
-    }
-}
+

@@ -26,12 +26,12 @@ extension MovieDetailPresenter {
 
 final class MovieDetailPresenter: MovieDetailPresenterProtocol {
     
-    unowned var view: MovieDetailViewControllerProtocol?
+    weak var view: MovieDetailViewControllerProtocol?
     let router: MovieDetailRouterProtocol!
     let interactor: MovieDetailInteractorProtocol!
     
-    private var movieDetail: MovieDetailResponse?
-    private var similarMovie: [SimilarMovieOutput] = []
+    var movieDetail: MovieDetailResponse?
+    var similarMovie: [SimilarMovieOutput] = []
     
     init(
         view: MovieDetailViewControllerProtocol,
@@ -44,12 +44,20 @@ final class MovieDetailPresenter: MovieDetailPresenterProtocol {
     }
     
     func viewDidLoad() {
-        view?.setupCollectionView()
-        view?.setUpView()
         if let movieId = view?.getMovieId() {
             fetchMovieDetail(with: movieId)
             fetchSimilarMovies(with: movieId)
         }
+    }
+    
+    private func fetchMovieDetail(with movieId: Int) {
+        view?.showLoadingView()
+        interactor.fetchMovieDetail(movieId)
+    }
+    
+    private func fetchSimilarMovies(with movieId: Int) {
+        view?.showLoadingView()
+        interactor.fetchSimilarMovies(movieId)
     }
     
     func numberOfItemsInSection() -> Int {
@@ -57,7 +65,7 @@ final class MovieDetailPresenter: MovieDetailPresenterProtocol {
     }
     
     func similarMovie(_ index: Int) -> SimilarMovieOutput? {
-        return similarMovie[safe: index]
+        return similarMovie[index]
     }
     
     func didSelectItemAt(index: Int) {
@@ -95,9 +103,9 @@ final class MovieDetailPresenter: MovieDetailPresenterProtocol {
             view?.setFavoritesButton(buttonText, isAdded: isFavorite)
         }
         
-        if let _ = movieDetail?.imdb_id {
-            view?.setImdbAvaibleView()
-        }
+//        if let _ = movieDetail?.imdb_id {
+//            view?.setImdbAvaibleView()
+//        }
     
     }
     
@@ -123,55 +131,5 @@ final class MovieDetailPresenter: MovieDetailPresenterProtocol {
             router.navigate(.openURL(imdbId: imdbId))
         }
     }
-    
-    private func fetchMovieDetail(with movieId: Int) {
-        view?.showLoadingView()
-        interactor.fetchMovieDetail(movieId)
-    }
-    
-    private func fetchSimilarMovies(with movieId: Int) {
-        view?.showLoadingView()
-        interactor.fetchSimilarMovies(movieId)
-    }
-    
 }
 
-extension MovieDetailPresenter: MovieDetailInteractorOutputProtocol {
-    
-    func fetchMovieDetail(result: MovieDetailResult) {
-        view?.hideLoadingView()
-        
-        switch result {
-        case .success(let movieDetail):
-            self.movieDetail = movieDetail
-            
-            if let movieId = movieDetail.id {
-                let storedMovieId = UserDefaults.standard.integer(forKey: "\(movieId)")
-                if storedMovieId == movieDetail.id {
-                    self.movieDetail?.favoriteStatus = true
-                }
-            }
-            
-            view?.reloadData()
-            
-        case .failure(let error):
-            print(error)
-        }
-    }
-    
-    func fetchSimilarMovies(result: SimilarMoviesResult) {
-        view?.hideLoadingView()
-        
-        switch result {
-        case .success(let similarMovieResult):
-            if let movies = similarMovieResult.results {
-                self.similarMovie.append(contentsOf: movies)
-                view?.reloadData()
-            }
-            
-        case .failure(let error):
-            print(error)
-        }
-    }
-    
-}

@@ -13,18 +13,13 @@ protocol MovieDetailInteractorProtocol: AnyObject {
     func fetchSimilarMovies(_ movieId: Int)
 }
 
-protocol MovieDetailInteractorOutputProtocol: AnyObject {
-    func fetchMovieDetail(result: MovieDetailResult)
-    func fetchSimilarMovies(result: SimilarMoviesResult)
-}
-
 typealias MovieDetailResult = Result<MovieDetailResponse, Error>
 typealias SimilarMoviesResult = Result<SimilarMovieResponse, Error>
 
 fileprivate var movieService: MovieServiceProtocol = MovieService()
 
 final class MovieDetailInteractor {
-    var output: MovieDetailInteractorOutputProtocol?
+    var delegate: MovieDetailPresenterDelegateProtocol?
 }
 
 extension MovieDetailInteractor: MovieDetailInteractorProtocol {
@@ -32,14 +27,14 @@ extension MovieDetailInteractor: MovieDetailInteractorProtocol {
     func fetchMovieDetail(_ movieId: Int) {
         movieService.fetchMovieDetail(movieID: movieId) { [weak self] result in
             guard let self = self else { return }
-            self.output?.fetchMovieDetail(result: result)
+            self.delegate?.fetchMovieDetail(result: result)
         }
     }
     
     func fetchSimilarMovies(_ movieId: Int) {
         movieService.fetchSimilarMovies(movieID: movieId) { [weak self] result in
             guard let self = self else { return }
-            self.output?.fetchSimilarMovies(result: result)
+            self.delegate?.fetchSimilarMovies(result: result)
         }
     }
     

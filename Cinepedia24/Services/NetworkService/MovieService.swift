@@ -11,10 +11,9 @@ protocol MovieServiceProtocol {
    
     func fetchListUpComing(completionHandler: @escaping (MovieListResult) -> ())
     func fetchListNowPlaying(completionHandler: @escaping (MovieListResult) -> ())
-//    func fetchSearch(query: String, completionHandler: @escaping (SearchedMovieResult) -> ())
-//    func fetchMovieDetail(movieID: Int, completionHandler: @escaping (MovieDetailResult) -> ())
-//    func fetchSimilarMovies(movieID: Int, completionHandler: @escaping (SimilarMoviesResult) -> ())
-    
+    func fetchSearch(query: String, completionHandler: @escaping (SearchedMovieResult) -> ())
+    func fetchMovieDetail(movieID: Int, completionHandler: @escaping (MovieDetailResult) -> ())
+    func fetchSimilarMovies(movieID: Int, completionHandler: @escaping (SimilarMoviesResult) -> ())
 }
 
 struct MovieService: MovieServiceProtocol {
@@ -28,15 +27,15 @@ struct MovieService: MovieServiceProtocol {
         NetworkService.shared.request(NetworkApiMethods.listNowPlaying, decodeToType: ListResponse.self, completionHandler: completionHandler)
     }
 
-//    func fetchSearch(query: String, completionHandler: @escaping (SearchedMovieResult) -> ()) {
-//        NetworkManager.shared.request(Router.search(query: query), decodeToType: SearchResponse.self, completionHandler: completionHandler)
- //   }
+    func fetchSearch(query: String, completionHandler: @escaping (SearchedMovieResult) -> ()) {
+        NetworkService.shared.request(NetworkApiMethods.search(query: query), decodeToType: SearchResponse.self, completionHandler: completionHandler)
+    }
 
-//    func fetchMovieDetail(movieID: Int, completionHandler: @escaping (MovieDetailResult) -> ()) {
-//        NetworkManager.shared.request(Router.movieDetail(movieID: movieID), decodeToType: MovieDetailResponse.self, completionHandler: completionHandler)
- //   }
-//
-//    func fetchSimilarMovies(movieID: Int, completionHandler: @escaping (SimilarMoviesResult) -> ()) {
-//        NetworkManager.shared.request(Router.similarMovies(movieID: movieID), decodeToType: SimilarMovieResponse.self, completionHandler: completionHandler)
-//    }
+    func fetchMovieDetail(movieID: Int, completionHandler: @escaping (MovieDetailResult) -> ()) {
+        NetworkService.shared.request(NetworkApiMethods.movieDetail(movieID: movieID), decodeToType: MovieDetailResponse.self, completionHandler: completionHandler)
+    }
+
+    func fetchSimilarMovies(movieID: Int, completionHandler: @escaping (SimilarMoviesResult) -> ()) {
+        NetworkService.shared.request(NetworkApiMethods.similarMovies(movieID: movieID), decodeToType: SimilarMovieResponse.self, completionHandler: completionHandler)
+    }
 }
