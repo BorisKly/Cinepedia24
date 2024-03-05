@@ -33,16 +33,14 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
-        
         setupCollectionView()
         setupTableView()
         setupSearchView()
-        
-        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter.viewDidLoad()
         presenter.viewWillAppear()
     }
    
@@ -54,7 +52,7 @@ final class ListViewController: UIViewController {
     
 }
 
-extension ListViewController: ListViewControllerProtocol, LoadingShowable {
+extension ListViewController: ListViewControllerProtocol, ActivityIndicatorLoading {
     
     func reloadData() {
           collectionView.reloadData()

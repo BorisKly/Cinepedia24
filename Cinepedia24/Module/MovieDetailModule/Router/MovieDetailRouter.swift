@@ -38,17 +38,17 @@ final class MovieDetailRouter {
 extension MovieDetailRouter: MovieDetailRouterProtocol {
     
     func navigate(_ route: MovieDetailRoutes) {
-//        switch route {
-//            
-//        case .detail(let movieId):
-//            let detailVC = MovieDetailRouter.createModule()
-//            detailVC.movieId = movieId
-//            viewController?.navigationController?.pushViewController(detailVC, animated: true)
-//        
-//        case .openURL(let imdbId):
-//            if let url = URL(string: "https://www.imdb.com/title/" + imdbId) {
-//                UIApplication.shared.open(url)
-//            }
-//        }
+        switch route {
+            
+        case .detail(let movieId):
+            let detailVC = MovieDetailRouter.createModule()
+            detailVC.movieId = movieId
+            viewController?.navigationController?.pushViewController(detailVC, animated: true)
+        
+        case .openURL(let imdbId):
+            if let url = URL(string: "https://www.imdb.com/title/" + imdbId) {
+                UIApplication.shared.open(url)
+            }
+        }
     }
 }

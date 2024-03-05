@@ -9,6 +9,8 @@ import UIKit
 
 protocol StartViewControllerProtocol: AnyObject {
     func noInternetConnection()
+    func showLoadingView()
+    func hideLoadingView()
 }
 
 class StartViewController: UIViewController {
@@ -18,26 +20,31 @@ class StartViewController: UIViewController {
     var presenter: StartPresenterProtocol!
 
     override func viewDidLoad() {
-        print(#function)
         super.viewDidLoad()
         view.backgroundColor = .gray
-        presenter.viewDidAppear()
         setAccessibilityIdentifiers()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.viewDidAppear()
+    }
 }
 
-extension StartViewController: StartViewControllerProtocol {
-    
+extension StartViewController: StartViewControllerProtocol, ActivityIndicatorLoading {
+   
+    func showLoadingView() {
+        print(#function)
+        showLoading()
+    }
+    func hideLoadingView() {
+        print(#function)
+        hideLoading()
+    }
     func noInternetConnection() {
         print(#function)
 //        showAlert(title: "Connection Error", message: "No Internet Connection. Please check your connection and try again later.")
     }
 }
 
-extension StartViewController {
-    func setAccessibilityIdentifiers() {
-        startImage.accessibilityIdentifier = "startImage"
-    }
-}
+
 

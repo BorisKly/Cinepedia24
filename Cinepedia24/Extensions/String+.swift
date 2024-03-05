@@ -7,6 +7,7 @@
 import Foundation
 
 public extension String {
+    
     func convertDateFormat(inputDate: String) -> String {
 
          let dateFormatter = DateFormatter()
@@ -19,4 +20,5 @@ public extension String {
 
          return convertDateFormatter.string(from: oldDate)
     }
+    
 }

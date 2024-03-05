@@ -40,7 +40,6 @@ final class ListPresenter: ListPresenterProtocol {
     
     func viewDidLoad() {
         fetchMovies()
-        //можуть бути додані інші функції
     }
     
     func viewWillAppear() {
@@ -48,9 +47,11 @@ final class ListPresenter: ListPresenterProtocol {
     }
     
     private func fetchMovies() {
-        //listVC?.showLoadingView()
-        interactor.fetchUpComingMovies()
-        interactor.fetchNowPlayingMovies()
+        listVC?.showLoadingView()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.interactor.fetchUpComingMovies()
+            self.interactor.fetchNowPlayingMovies()
+        }
     }
     
     func numberOfItemsInSection() -> Int {

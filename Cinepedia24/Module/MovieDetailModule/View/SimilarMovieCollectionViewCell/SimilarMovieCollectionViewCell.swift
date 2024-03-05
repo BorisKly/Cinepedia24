@@ -16,15 +16,12 @@ protocol SimilarMovieCollectionViewCellProtocol: AnyObject {
 
 final class SimilarMovieCollectionViewCell: UICollectionViewCell {
     
-   @IBOutlet weak var moviePosterImage: UIImageView!
+    @IBOutlet weak var moviePosterImage: UIImageView! {
+        didSet {
+            moviePosterImage.layer.cornerRadius = 6
+        }
+    }
     
-    
-//    @IBOutlet weak var moviePosterImage: UIImageView! {
-//        didSet {
-//            moviePosterImage.layer.cornerRadius = 6
-//        }
-//    }
-//    @IBOutlet weak var titleDateLabel: UILabel!
     @IBOutlet weak var titleDateLabel: UILabel!
     
     var cellPresenter: SimilarMovieCollectionViewCellPresenterProtocol! {

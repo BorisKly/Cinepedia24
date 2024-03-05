@@ -5,4 +5,8 @@
 //  Created by Borys Klykavka on 04.03.2024.
 //
 
-import Foundation
+extension StartViewController {
+    func setAccessibilityIdentifiers() {
+        startImage.accessibilityIdentifier = "startImage"
+    }
+}

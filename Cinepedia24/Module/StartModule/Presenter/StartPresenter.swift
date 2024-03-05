@@ -29,10 +29,12 @@ final class StartPresenter: StartPresenterProtocol {
     }
     
     func viewDidAppear() {
+        view.showLoadingView()
         interactor.checkInternetConnection()
     }
     
     func routeToList() {
+        view.hideLoadingView()
         router.navigate(.listScreen)
     }
     

@@ -16,6 +16,6 @@ extension MovieDetailViewController {
         releaseDateLabel.accessibilityIdentifier = "releaseDateLabel"
         collectionView.accessibilityIdentifier = "detailCollectionView"
        // imdbAvaibleView.accessibilityIdentifier = "imdbAvaibleView"
-        addFavoritesButton.accessibilityIdentifier = "addFavoritesButton"
+       // addFavoritesButton.accessibilityIdentifier = "addFavoritesButton"
     }
 }

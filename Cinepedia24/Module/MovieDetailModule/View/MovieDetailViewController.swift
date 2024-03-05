@@ -20,7 +20,6 @@ protocol MovieDetailViewControllerProtocol: AnyObject {
     func setVoteScore(_ text: String)
     func setReleaseDate(_ text: String)
     func setFavoritesButton(_ text: String, isAdded: Bool)
-   // func setImdbAvaibleView()
     func getMovieId() -> Int?
 }
 
@@ -34,17 +33,11 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    @IBOutlet  weak var imdbAvaibleView: UIView! {
-//        didSet {
-//            imdbAvaibleView.isHidden = true
-//        }
-//    }
-    @IBOutlet weak var addFavoritesButton: UIButton!{
+    @IBOutlet weak var addFavoritesButton: UIButton! {
         didSet {
             addFavoritesButton.layer.cornerRadius = 8
             addFavoritesButton.layer.borderWidth = 1
             addFavoritesButton.layer.borderColor = UIColor.lightGray.cgColor
-            addFavoritesButton.backgroundColor = .systemYellow
             addFavoritesButton.tintColor = .black
         }
     }
@@ -58,17 +51,13 @@ class MovieDetailViewController: UIViewController {
         presenter.viewDidLoad()
     }
     
-//    @IBAction func didTapImdb(_ sender: Any) {
-//        presenter.goToImdbPage()
-//    }
-    
-//    @IBAction func didTapAddFavorites(_ sender: Any) {
-//        presenter.addFavoritesButtonTapped(movieID: self.movieId ?? 0)
-//    }
-    
+    @IBAction func didTapAddFavorites(_ sender: Any) {
+                presenter.addFavoritesButtonTapped(movieID: self.movieId ?? 0)
+
+    }
 }
 
-extension MovieDetailViewController: MovieDetailViewControllerProtocol, LoadingShowable {
+extension MovieDetailViewController: MovieDetailViewControllerProtocol, ActivityIndicatorLoading {
   
     func setMoviePoster(_ imageUrl: URL) {
         moviePosterImage.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder_movie_poster"))
@@ -95,10 +84,6 @@ extension MovieDetailViewController: MovieDetailViewControllerProtocol, LoadingS
         addFavoritesButton.backgroundColor = isAdded ? .lightGray : .systemYellow
         addFavoritesButton.tintColor = isAdded ? .white : .black
     }
-    
-//    func setImdbAvaibleView() {
-//        imdbAvaibleView.isHidden = false
-//    }
     
     func reloadData() {
         self.presenter.loadInputViews()

@@ -4,26 +4,53 @@
 //
 //  Created by Borys Klykavka on 03.03.2024.
 //
-
 import UIKit
 
-class SearchViewController: UIViewController {
+protocol SearchViewControllerProtocol: AnyObject {
+    func reloadData()
+    func showLoadingView()
+    func hideLoadingView()
+    func setupTableView()
+    func getSearchText() -> String?
+}
 
+final class SearchViewController: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    var searchText: String?
+    var presenter: SearchPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter.viewDidLoad()
+        setAccessibilityIdentifiers()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension SearchViewController: SearchViewControllerProtocol, ActivityIndicatorLoading {
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+    func showLoadingView() {
+        showLoading()
+    }
+    
+    func hideLoadingView() {
+        hideLoading()
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(cellType: SearchTableViewCell.self)
+    }
+    
+    func getSearchText() -> String? {
+        return searchText
+    }
+    
+}
+

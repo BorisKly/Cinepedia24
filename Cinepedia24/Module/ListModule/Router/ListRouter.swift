@@ -45,7 +45,6 @@ extension ListRouter: ListRouterProtocol {
             viewController?.navigationController?.pushViewController(detailVC, animated: true)
             
         case .search(let text):
-            return
             guard let text = text,
                   text.count > 2 else { return }
             let searchVC = SearchRouter.createModule()

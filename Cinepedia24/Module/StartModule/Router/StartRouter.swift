@@ -17,7 +17,7 @@ enum StartRoutes {
 
 final class StartRouter {
 
-    weak var viewController: StartViewController? // щоб потім витягти window в функції navigate
+    weak var viewController: StartViewController?
     
     static func createModule() -> StartViewController {
         let vс = StartViewController()
@@ -26,9 +26,6 @@ final class StartRouter {
         let presenter = StartPresenter(view: vс, router: router, interactor: interactor)
         vс.presenter = presenter
         interactor.delegate = presenter
-        // делегат
-        // краще б його делегувати в презентері, але не зрозуміло чи треба його визначати в
-        // StartInteractorProtocol
         router.viewController = vс
         return vс
     }
