@@ -27,5 +27,5 @@ struct ConfigValues {
         } catch let err {
             fatalError(err.localizedDescription)
         }
-    }
+    }#imageLiteral(resourceName: "simulator_screenshot_13287C29-8BBE-48C4-BB3B-FA5F123D9184.png")
 }
