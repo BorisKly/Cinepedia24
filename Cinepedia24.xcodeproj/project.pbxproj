@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E46F5C752B88B97500AA5F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5C742B88B97500AA5F40 /* AppDelegate.swift */; };
 		E46F5C772B88B97500AA5F40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5C762B88B97500AA5F40 /* SceneDelegate.swift */; };
-		E46F5C792B88B97500AA5F40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5C782B88B97500AA5F40 /* ViewController.swift */; };
 		E46F5C7E2B88B97600AA5F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46F5C7D2B88B97600AA5F40 /* Assets.xcassets */; };
 		E46F5C812B88B97600AA5F40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46F5C7F2B88B97600AA5F40 /* LaunchScreen.storyboard */; };
 		E46F5C8C2B88BC2300AA5F40 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5C8B2B88BC2300AA5F40 /* StartRouter.swift */; };
@@ -29,7 +28,6 @@
 		E46F5CC12B8A747900AA5F40 /* ListViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CC02B8A747900AA5F40 /* ListViewController+TableViewDelegate.swift */; };
 		E46F5CC32B8A74D300AA5F40 /* ListViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CC22B8A74D300AA5F40 /* ListViewController+SearchBar.swift */; };
 		E46F5CCB2B8A7F4C00AA5F40 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CCA2B8A7F4C00AA5F40 /* LoadingView.swift */; };
-		E46F5CD12B8A7FE700AA5F40 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CD02B8A7FE700AA5F40 /* UIApplication+.swift */; };
 		E46F5CD32B8B292100AA5F40 /* StartPresenter+StartPresenterDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CD22B8B292100AA5F40 /* StartPresenter+StartPresenterDelegateProtocol.swift */; };
 		E46F5CD52B8B2EEF00AA5F40 /* ListPresenter+ListPresenterDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CD42B8B2EEF00AA5F40 /* ListPresenter+ListPresenterDelegateProtocol.swift */; };
 		E46F5CD92B8B3F1300AA5F40 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5CD82B8B3F1300AA5F40 /* MovieService.swift */; };
@@ -65,21 +63,22 @@
 		E46F5D3D2B8FAF7400AA5F40 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D3C2B8FAF7400AA5F40 /* SearchPresenter.swift */; };
 		E46F5D3F2B8FAF9900AA5F40 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D3E2B8FAF9900AA5F40 /* SearchInteractor.swift */; };
 		E46F5D412B8FAFBD00AA5F40 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D402B8FAFBD00AA5F40 /* SearchResponse.swift */; };
-		E46F5D442B8FAFE600AA5F40 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D422B8FAFE600AA5F40 /* SearchViewController.swift */; };
-		E46F5D452B8FAFE600AA5F40 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46F5D432B8FAFE600AA5F40 /* SearchViewController.xib */; };
 		E46F5D492B8FB02400AA5F40 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D472B8FB02400AA5F40 /* SearchTableViewCell.swift */; };
 		E46F5D4A2B8FB02400AA5F40 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46F5D482B8FB02400AA5F40 /* SearchTableViewCell.xib */; };
 		E46F5D4C2B8FB03D00AA5F40 /* SearchTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D4B2B8FB03D00AA5F40 /* SearchTableViewCellPresenter.swift */; };
 		E46F5D4E2B8FB0CA00AA5F40 /* SearchTableViewCell+AccessabilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D4D2B8FB0CA00AA5F40 /* SearchTableViewCell+AccessabilityIdentifiers.swift */; };
 		E46F5D502B8FB91200AA5F40 /* SearchViewController+AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D4F2B8FB91200AA5F40 /* SearchViewController+AccessibilityIdentifiers.swift */; };
 		E46F5D522B8FBE0100AA5F40 /* SearchViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D512B8FBE0100AA5F40 /* SearchViewController+TableViewDelegate.swift */; };
+		E46F5D792B94FB1200AA5F40 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D772B94FB1200AA5F40 /* SearchViewController.swift */; };
+		E46F5D7A2B94FB1200AA5F40 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46F5D782B94FB1200AA5F40 /* SearchViewController.xib */; };
+		E46F5D7C2B9593BE00AA5F40 /* StartViewController+AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5D7B2B9593BE00AA5F40 /* StartViewController+AccessibilityIdentifiers.swift */; };
+		E46F5DAB2B970B0200AA5F40 /* ActivityIndicatorLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46F5DAA2B970B0200AA5F40 /* ActivityIndicatorLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E46F5C712B88B97500AA5F40 /* Cinepedia24.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinepedia24.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46F5C742B88B97500AA5F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E46F5C762B88B97500AA5F40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E46F5C782B88B97500AA5F40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E46F5C7D2B88B97600AA5F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46F5C802B88B97600AA5F40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E46F5C822B88B97600AA5F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,9 +97,7 @@
 		E46F5CBE2B8A744300AA5F40 /* ListViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		E46F5CC02B8A747900AA5F40 /* ListViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		E46F5CC22B8A74D300AA5F40 /* ListViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+SearchBar.swift"; sourceTree = "<group>"; };
-		E46F5CC92B8A7F2D00AA5F40 /* WorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItem.swift; sourceTree = "<group>"; };
 		E46F5CCA2B8A7F4C00AA5F40 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		E46F5CD02B8A7FE700AA5F40 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		E46F5CD22B8B292100AA5F40 /* StartPresenter+StartPresenterDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartPresenter+StartPresenterDelegateProtocol.swift"; sourceTree = "<group>"; };
 		E46F5CD42B8B2EEF00AA5F40 /* ListPresenter+ListPresenterDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListPresenter+ListPresenterDelegateProtocol.swift"; sourceTree = "<group>"; };
 		E46F5CD82B8B3F1300AA5F40 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
@@ -134,14 +131,16 @@
 		E46F5D3C2B8FAF7400AA5F40 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		E46F5D3E2B8FAF9900AA5F40 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		E46F5D402B8FAFBD00AA5F40 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
-		E46F5D422B8FAFE600AA5F40 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		E46F5D432B8FAFE600AA5F40 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		E46F5D472B8FB02400AA5F40 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		E46F5D482B8FB02400AA5F40 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		E46F5D4B2B8FB03D00AA5F40 /* SearchTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellPresenter.swift; sourceTree = "<group>"; };
 		E46F5D4D2B8FB0CA00AA5F40 /* SearchTableViewCell+AccessabilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTableViewCell+AccessabilityIdentifiers.swift"; sourceTree = "<group>"; };
 		E46F5D4F2B8FB91200AA5F40 /* SearchViewController+AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+AccessibilityIdentifiers.swift"; sourceTree = "<group>"; };
 		E46F5D512B8FBE0100AA5F40 /* SearchViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		E46F5D772B94FB1200AA5F40 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E46F5D782B94FB1200AA5F40 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		E46F5D7B2B9593BE00AA5F40 /* StartViewController+AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartViewController+AccessibilityIdentifiers.swift"; sourceTree = "<group>"; };
+		E46F5DAA2B970B0200AA5F40 /* ActivityIndicatorLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorLoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,13 +176,11 @@
 		E46F5C732B88B97500AA5F40 /* Cinepedia24 */ = {
 			isa = PBXGroup;
 			children = (
-				E46F5CCF2B8A7FD900AA5F40 /* Extensions */,
-				E46F5CC52B8A7A6F00AA5F40 /* Resources */,
 				E46F5C982B88D32A00AA5F40 /* Services */,
 				E46F5C882B88BBF600AA5F40 /* Module */,
-				E46F5C742B88B97500AA5F40 /* AppDelegate.swift */,
-				E46F5C762B88B97500AA5F40 /* SceneDelegate.swift */,
-				E46F5C782B88B97500AA5F40 /* ViewController.swift */,
+				E46F5DAC2B970B2000AA5F40 /* App */,
+				E46F5CC52B8A7A6F00AA5F40 /* Resources */,
+				E46F5CCF2B8A7FD900AA5F40 /* Extensions */,
 				E46F5C7D2B88B97600AA5F40 /* Assets.xcassets */,
 				E46F5C7F2B88B97600AA5F40 /* LaunchScreen.storyboard */,
 				E46F5C822B88B97600AA5F40 /* Info.plist */,
@@ -226,6 +223,7 @@
 			children = (
 				E46F5CA62B8A685E00AA5F40 /* StartViewController.swift */,
 				E46F5CA72B8A685E00AA5F40 /* StartViewController.xib */,
+				E46F5D7B2B9593BE00AA5F40 /* StartViewController+AccessibilityIdentifiers.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,7 +316,7 @@
 		E46F5CC52B8A7A6F00AA5F40 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E46F5CC92B8A7F2D00AA5F40 /* WorkItem.swift */,
+				E46F5DAA2B970B0200AA5F40 /* ActivityIndicatorLoading.swift */,
 				E46F5CCA2B8A7F4C00AA5F40 /* LoadingView.swift */,
 			);
 			path = Resources;
@@ -327,7 +325,6 @@
 		E46F5CCF2B8A7FD900AA5F40 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E46F5CD02B8A7FE700AA5F40 /* UIApplication+.swift */,
 				E46F5CF22B8B5DEC00AA5F40 /* String+.swift */,
 				E46F5CFC2B8B76EC00AA5F40 /* UITableView+.swift */,
 				E46F5D072B8C939E00AA5F40 /* UICollectionView+.swift */,
@@ -450,8 +447,8 @@
 		E46F5D352B8FAECB00AA5F40 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E46F5D422B8FAFE600AA5F40 /* SearchViewController.swift */,
-				E46F5D432B8FAFE600AA5F40 /* SearchViewController.xib */,
+				E46F5D772B94FB1200AA5F40 /* SearchViewController.swift */,
+				E46F5D782B94FB1200AA5F40 /* SearchViewController.xib */,
 				E46F5D512B8FBE0100AA5F40 /* SearchViewController+TableViewDelegate.swift */,
 				E46F5D4F2B8FB91200AA5F40 /* SearchViewController+AccessibilityIdentifiers.swift */,
 				E46F5D462B8FB00100AA5F40 /* SearchTableViewCell */,
@@ -500,6 +497,15 @@
 				E46F5D4D2B8FB0CA00AA5F40 /* SearchTableViewCell+AccessabilityIdentifiers.swift */,
 			);
 			path = SearchTableViewCell;
+			sourceTree = "<group>";
+		};
+		E46F5DAC2B970B2000AA5F40 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E46F5C742B88B97500AA5F40 /* AppDelegate.swift */,
+				E46F5C762B88B97500AA5F40 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,9 +582,9 @@
 				E46F5CB52B8A6A2B00AA5F40 /* ListViewController.xib in Resources */,
 				E46F5D4A2B8FB02400AA5F40 /* SearchTableViewCell.xib in Resources */,
 				E46F5D162B8D134700AA5F40 /* Keys.plist in Resources */,
+				E46F5D7A2B94FB1200AA5F40 /* SearchViewController.xib in Resources */,
 				E46F5CA92B8A685E00AA5F40 /* StartViewController.xib in Resources */,
 				E46F5D042B8C8FD900AA5F40 /* MovieBannerCollectionViewCell.xib in Resources */,
-				E46F5D452B8FAFE600AA5F40 /* SearchViewController.xib in Resources */,
 				E46F5D312B8DD35A00AA5F40 /* SimilarMovieCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,14 +598,13 @@
 			files = (
 				E46F5CB92B8A705400AA5F40 /* ListResponse.swift in Sources */,
 				E46F5D222B8DCF1000AA5F40 /* SimilarMovieResponse.swift in Sources */,
+				E46F5D7C2B9593BE00AA5F40 /* StartViewController+AccessibilityIdentifiers.swift in Sources */,
 				E46F5D4E2B8FB0CA00AA5F40 /* SearchTableViewCell+AccessabilityIdentifiers.swift in Sources */,
 				E46F5CB12B8A69AC00AA5F40 /* ListRouter.swift in Sources */,
 				E46F5CC32B8A74D300AA5F40 /* ListViewController+SearchBar.swift in Sources */,
-				E46F5C792B88B97500AA5F40 /* ViewController.swift in Sources */,
 				E46F5D282B8DD1EB00AA5F40 /* MovieDetailViewController+CollectionViewDelegate.swift in Sources */,
 				E46F5CA82B8A685E00AA5F40 /* StartViewController.swift in Sources */,
 				E46F5CBF2B8A744300AA5F40 /* ListViewController+CollectionViewDelegate.swift in Sources */,
-				E46F5D442B8FAFE600AA5F40 /* SearchViewController.swift in Sources */,
 				E46F5C9A2B88D33700AA5F40 /* NetworkService.swift in Sources */,
 				E46F5C752B88B97500AA5F40 /* AppDelegate.swift in Sources */,
 				E46F5C972B88C4D100AA5F40 /* StartInteractor.swift in Sources */,
@@ -620,11 +625,12 @@
 				E46F5CDF2B8B468000AA5F40 /* Access.swift in Sources */,
 				E46F5CB72B8A700400AA5F40 /* ListInteractor.swift in Sources */,
 				E46F5D1C2B8DCEB400AA5F40 /* MovieDetailPresenter.swift in Sources */,
+				E46F5DAB2B970B0200AA5F40 /* ActivityIndicatorLoading.swift in Sources */,
 				E46F5CBB2B8A708A00AA5F40 /* ListPresenter.swift in Sources */,
 				E46F5D0A2B8CDE5D00AA5F40 /* ListViewController+AccessibilityIdentifiers.swift in Sources */,
 				E46F5D302B8DD35A00AA5F40 /* SimilarMovieCollectionViewCell.swift in Sources */,
 				E46F5CD32B8B292100AA5F40 /* StartPresenter+StartPresenterDelegateProtocol.swift in Sources */,
-				E46F5CD12B8A7FE700AA5F40 /* UIApplication+.swift in Sources */,
+				E46F5D792B94FB1200AA5F40 /* SearchViewController.swift in Sources */,
 				E46F5CDB2B8B404800AA5F40 /* NetworkApiMethods.swift in Sources */,
 				E46F5D1E2B8DCED500AA5F40 /* MovieDetailInteractor.swift in Sources */,
 				E46F5D242B8DCF3900AA5F40 /* MovieDetailRouter.swift in Sources */,
